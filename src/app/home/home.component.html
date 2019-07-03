@@ -1,0 +1,17 @@
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+  <mat-form-field>
+    <mat-label>Dog name: </mat-label>
+    <mat-select formControlName="dogName">
+      <mat-option *ngFor="let dog of dogs" [value]="dog" >
+        {{dog}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+    <button mat-button color="primary" type="submit" [disabled]="!profileForm.valid">Submit</button>
+
+</form>
+
+<div>
+<img src="{{dogURL}}" >
+</div>
